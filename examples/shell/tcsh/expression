@@ -1,0 +1,7 @@
+#!/usr/bin/tcsh
+
+set j = 1
+
+set j = `expr $j + 1`
+
+echo $j

@@ -1,0 +1,8 @@
+#!/bin/tcsh
+
+set line="$<";
+
+while("$line" != "")
+	echo "$line"
+	set line="$<"
+end

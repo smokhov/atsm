@@ -1,0 +1,57 @@
+#!/bin/tcsh
+# The line above insures that this script will be interpreted by the C shell
+
+# $Revision: 1.1 $
+# $Date: 2014/09/10 04:28:18 $
+
+# This script will change all file names that have
+# upper case letters in them to ones with lower case letters only
+
+# Note that this will leave directory names alone.
+
+# All comments are preceded by a # symbol
+
+# Uncomment the next line if you want to run the script in verbose mode
+#set verbose
+
+# First make sure that there are some file names to process
+# if not, print a message and exit
+if ( $#argv == 0 ) then
+	echo Hey, give some file names!
+	echo 'usage: uptolow file1 [file2] ...'
+	exit 1
+endif
+
+# foreach will loop through the list between the ()'s
+# the $* is a special variable that stands for all the arguments passed
+# to the script on the command line.
+foreach i ( $* )
+
+	# Make sure that $i is an ordinary file (not a directory)
+	# If it isn't, skip that name
+	if ( -f $i ) then
+
+		# Process the current filename with the tr utility.
+		# The arguments tell tr to convert any uppercase
+		# letters to lowercase.  The variable fname is set to the
+		# string with all lowercase letters
+		# Note that the characters enclosing echo $i ... are backquotes
+		set fname = `echo $i | tr "[A-Z]" "[a-z]" `
+
+		# Don't rename the file if it was originally all lowercase
+		if ( $i != $fname ) then
+			# Don't rename file if the lowercase name already exists
+			if ( ! -e $fname ) then
+				echo Renaming $i to $fname
+				mv $i $fname # rename the file
+			else
+				echo $fname already exists. Not changing $i...
+			endif
+		else
+			echo Not changing $i... Already loweracse
+		endif
+	else
+		echo $i is not an ordinary file. Skipping it.
+	endif
+
+end # of the foreach loop

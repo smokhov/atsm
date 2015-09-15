@@ -1,0 +1,225 @@
+README
+------
+
+A brief description on how to, compile, run, and test this
+piece of software.
+
+Serguei A. Mokhov
+
+
+Intro
+=====
+
+There are several sections in this document. First of them considers 
+portability problems. Second, outlines files and their use. Next, says how to 
+compile and to start both the server and the client. Then, there are test 
+cases and known bugs of the current implementation.
+
+
+Features
+========
+
+Microshell Client (microsh)
+---------------------------
+
+	o Connect to either Micro Time Sever or Snoop Server on a given host
+	o Use of sockets and new pomtps :)
+	o Ability to communicate with a Micro Time Sever using Shared
+  	memory and semaphores
+	o Unlimited # of commands and arguments of the commands (see Bugs).
+	o More or less proper system error handling where applicable.
+	o Handles > and >> types of redirection.
+
+Snoop Server (snoopsrv)
+-----------------------
+   
+  o Implements (hopefully) snooping "service".
+
+
+Micro Time Server (mtimesrv)
+----------------------------
+
+  Not exercised too much here :). Acts as a time server for a
+  bunch of microshell clients using SVR4 IPC (shared memory in this
+  implementation). Able to process OPEN, PING, TIME OF THE DAY, ELAPSED TIME,
+  VERSION, and TERMINATE requests from clients.
+  
+  I didn't test it enough.
+
+
+Files and Filenames
+===================
+
+  Documentation:
+  
+  o README - this file
+
+  Sources:
+  --------
+  
+    ./Makefile - global makefile
+
+    ./server/Makefile      - server's makefile
+             mtimesrv.c|.h - Micro Time Server
+             snoopsrv.c|.h - Snoop Server
+    
+    ./client/Makefile        - client's makefile
+             microsh.h|.c    - header and source files for the main shell module
+             msh_parse.h|.c  - header and source files for the parsing shell module
+             msh_string.h|.c - header and source files for the string shell module
+
+	An IPC library:
+	
+	./ipc/Makefile       - makefile for all IPC modules the client and the server use
+          ipc.h        - a generic IPC module with common interface for dispatching
+          icp.c          requests to specific modules
+          sem.h        - common semaphore operations are in here, like for init, destruction,
+          sem.c          V and P operations.
+          shmem.h|.c   - shared memory implementation of ipc.h    
+          sockets.h|.c - socket implementation of ipc.h
+          npipes.h|.c  - stub code for all the others for now
+          msq.h|.c
+
+	TTY/PTY Stuff (Mostly from Stevens)
+
+	./tty/Makefile
+		  isatty.c
+		  ptyfork.c
+		  pty-loop.c
+		  ptyopen.c
+		  ttymodes.c
+		  tty-pty.h    - global header for all of them
+		  writen.c
+  
+	Utility things
+	
+    ./util/Makefile        - client's makefile
+           msh_string.h|.c - header and source files for the string shell module
+           file.h|.c       - establishRedirection()
+  
+  (Possibly) Created files:
+  -------------------------
+   ./snoopsrv        - a symlink to the executable
+   ./rshell          - - " -          Microshell Client
+   ./rsnoop          - - " -          Microshell Client
+   ./server/snoopsrv - executable for Snoop Server
+   ./server/mtimesrv - executable for Micro Time Server
+   ./cliebt/microsh  - - " -          Microshell Client
+   ./mtimesrv.log    - gets created and maintained by the server when it's up
+   ./snoopsrv.log    - gets created and maintained by the server when it's up
+   ./snoofile        - input log
+
+
+How to run?
+===========
+
+  o Compile:
+    $ make
+    
+  o Run
+    In one terminal window:
+	  $ ./snoopsrv
+	
+  	In another
+	  $ ./rshell
+
+What to type:
+-------------
+
+msh> rshell hostname
+
+where hostname is the host the snoopsrv is running on
+
+The prompt should change to:
+rshell> 
+
+and will keep bugging you until exit even when bash
+tries to stuff in its own prompt. It's definitely a feature!!!
+
+Now one's connected to the server and all PTY stuff should
+be set up. Whatever command is typed in and "submitted"
+to the server is logged into the 'snoopfile'
+and is fed to the bash through PTY, bash's output happily goes
+to the STDOUT, which is redirected to the client's socket.
+
+Once tired of stuffing the remote bash with commands, type
+
+rshell> exit
+
+which bash will execute and die properly leaving a Zombie,
+which I didn't bother to wait for.
+
+Now tricky part:
+
+rshell> [ENTER]
+
+Will bring the original prompt:
+
+msh> 
+
+
+So we type:
+
+msh> rsnoop hostname
+
+to playback the snoopfile.
+
+The
+
+rsnoop>
+
+prompt will appear.
+
+Now just hitting ENTER it will play command by command from the snoopfile
+until exit.
+
+
+To clean up:
+------------
+
+  $ make clean
+  Makefile will remove executable, object, and log files in all subdirectories.
+
+  $ make clean-all
+  Additionally will remove all the libraries.
+  
+
+
+Bugs
+====
+
+... are piling up...
+
+o If there's not exit in the snoopfile during playback
+  we'll fail at the end
+  
+o when trying to connect to a host name, if hostname is
+  invalid, causes client to quit
+  
+o output of more than 8K on the other end might cause troubles.
+
+Latest test cases show that:
+
+o I don't seem to block terminal-originated signals in the client
+  (other than SIGALRM).
+
+BUGS in client:
+          
+o There is a limitation on the length of a command line the user
+  can enter. It might seem to be that the user is capable to enter
+  more than the limit, but the input will be truncated to the
+  limit's value. The limit is specified by the MAX_CMD_LINE_CHARS
+  symbol in microsh.h. By default it's 1025. So there is a practical
+  limit to the # of commands and options in one command line.
+
+o There's almost no extensive syntax check for the command line.
+  For the cases like:
+
+  msh>|cat|less    (starts from "|")
+  msh>ls >         (no redirect filename)
+  msh>ls| | cat    (empty pipe)
+  msh>ls|cat |     (end with "|")
+
+  the behaviour is undefined.
+
+EOF

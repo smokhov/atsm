@@ -1,0 +1,37 @@
+README
+======
+
+Intro
+-----
+
+This example consists of two parts:
+  - ASCII character device driver
+  - Driver test program
+
+EMPLOY EXTREME CAUTION when playing with this.
+It's not a production quality 'software'.
+NOT recommended to use on systems with important
+data or tasks.
+
+Installation and Execution
+--------------------------
+
+To install compile first:
+
+$ make
+
+Then register an ASCII driver:
+
+$ make register
+
+For the latter to succeed you have to have root
+privileges and not to have module called 'ascii'.
+Otherwise, you'll have to tweak the Makefile.
+
+If you don't want debugging messages, also tweak
+the Makefile.
+
+To run the test program type:
+$ ./ascii-test
+
+EOF

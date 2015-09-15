@@ -1,0 +1,6 @@
+ls
+ls -al
+ls -al --color
+ps -gx
+cat snoopfile
+exit

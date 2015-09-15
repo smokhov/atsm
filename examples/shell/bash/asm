@@ -1,0 +1,9 @@
+#!/bin/bash
+
+nasm -f elf "$1.asm" -l "$1.lst"
+
+if [ $? != 0 ]; then
+	exit 1
+fi
+
+ld -o "$1" "$1.o"

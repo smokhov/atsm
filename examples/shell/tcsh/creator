@@ -1,0 +1,23 @@
+#!/bin/tcsh
+
+# This script will create five 0 length files and a directory 
+# if they do not exist already.
+
+# Uncomment the next line if you want to run the script in verbose mode
+#set verbose
+
+# foreach will set the variable i to each element of the list between the ()'s
+foreach i ( file1 FILE2 File3 fILE4 TheTest.c )
+
+	# If the file does not exist already, create it
+	if ( ! -e $i ) then
+		echo Creating $i...
+		touch $i
+	endif
+
+end # end of the foreach
+
+if ( ! -e somewhat_Unique_dir ) then
+	echo creating the directory somewhat_Unique_dir
+	mkdir somewhat_Unique_dir
+endif
