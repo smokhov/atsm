@@ -1,4 +1,16 @@
-Copyright (c) 2015, smokhov
+The contents under examples/c/book/robbins-linux-programming is from:
+
+   Arnold Robbins. Linux Programming by Example: The Fundamentals.	 
+   Prentice Hall, First edition, April 2004. ISBN: 978-0131429642.
+
+and is under the Open Publication License, see PERMISSIONS file
+under that directory. This content is reproduced and modified with
+permission from Arnold Robbins and the publisher.
+
+
+The rest where the authors are not specified:
+
+Copyright (c) 2001--2015, for the rest is by Serguei Mokhov
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -21,4 +33,3 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
