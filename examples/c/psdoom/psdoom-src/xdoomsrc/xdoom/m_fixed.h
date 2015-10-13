@@ -55,9 +55,9 @@ typedef int fixed_t;
 
 static inline fixed_t FixedMul(fixed_t _a, fixed_t _b) {
 	fixed_t _result;
-	asm ("
+	asm (
 	    imull %2
-	    shrdl  $16, %%edx, %0" :
+	    shrdl  $16, %%edx, %0 :
 	    "=a,=a" (_result) :
 	    "0,0" (_a),
 	    "m,r" (_b) :

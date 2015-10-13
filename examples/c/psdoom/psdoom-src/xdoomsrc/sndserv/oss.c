@@ -33,6 +33,7 @@ rcsid[] = "$Id:$";
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <errno.h>
 
 #ifdef LINUX
 #include <linux/soundcard.h>
@@ -56,7 +57,6 @@ int	audio_8bit_flag;
 void myioctl(int fd, int command, int *arg)
 {   
     int		rc;
-    extern int	errno;
     
     rc = ioctl(fd, command, arg);  
     if (rc < 0)

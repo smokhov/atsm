@@ -99,7 +99,7 @@ JOYSTICK=			# use this if you don't want joystick support
 #JOYSTICK=$(O)/i_ljoy.o		# Linux joystick support module
 
 # Production, old GNU C 2.7
-OPTFLAGS=-O3 -m486 -ffast-math -fomit-frame-pointer -DUSE_INLINE \
+OPTFLAGS=-O3 -m32 -ffast-math -fomit-frame-pointer -DUSE_INLINE \
 	-DUSE_ASMMOD
 
 # Debugging, old GNU C 2.7
@@ -233,7 +233,7 @@ $(O)/%.o:	%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(O)/%.o:	%.s
-	as $< -o $@
+	as $< --32 -o $@
 
 #############################################################
 #
