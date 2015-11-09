@@ -9,9 +9,9 @@
 
 #include "Defs.h"
 
-int Prime[MaxPrimes],  /* Prime[I] will be 1 if I is prime, 0 otherwi */
-    UpperBound;  /* we will check all number up through this one for
-                      primeness */
+int Prime[MaxPrimes],  /* Prime[I] will be 1 if I is prime, 0 otherwise */
+    UpperBound;        /* we will check all number up through this one for
+                          primeness */
 
 int main(int argc, char**  argv)
 {

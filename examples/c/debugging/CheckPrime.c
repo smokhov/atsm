@@ -13,7 +13,7 @@ void CheckPrime(K)
      J = 2;
      while (1) {
         if (Prime[J] == 1)
-           if (K % J == 0)  {
+           if (K % J == 0) {
               Prime[K] = 0;
               return;
            }

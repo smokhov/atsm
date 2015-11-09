@@ -12,7 +12,7 @@ void CheckPrime(K)
 
      for (J = 2; J*J <= K; J++)
         if (Prime[J] == 1)
-           if (K % J == 0)  {
+           if (K % J == 0) {
               Prime[K] = 0;
               return;
            }
