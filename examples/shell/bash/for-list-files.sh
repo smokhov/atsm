@@ -4,7 +4,7 @@
 
 for file in * .*
 do
-	echo $file
+	echo "$file"
 done
 
 # EOF

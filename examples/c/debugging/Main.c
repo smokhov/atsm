@@ -18,13 +18,13 @@ int main(int argc, char**  argv)
 	int N;
 
      printf("enter upper bound\n");
-     scanf("%d", UpperBound);
+     scanf("%d", &UpperBound);
 
      Prime[2] = 1;
 
-     for (N = 3; N <= UpperBound; N += 2)
-        CheckPrime();
-
-     if (Prime[N]) printf("%d is a prime\n", N);
+     for (N = 3; N <= UpperBound; N += 2) {
+        CheckPrime(N);
+        if (Prime[N]) printf("%d is a prime\n", N);
+     }
 }
 
