@@ -1,0 +1,42 @@
+<html>
+<body>
+<script type="text/javascript">
+//This is our function to be called with JSON data in local machine
+function showPrice(data) {
+  var html=("<h1>Data from Local host</h1>");
+  html+=("<p>Symbol: " + data.symbol + ", Price: " + data.price+"<p>");
+  document.getElementById("local").innerHTML=html;
+}
+var url = "http://localhost:8080/MashupTest/Ticker?callback=showPrice"; // URL of the external script
+//this shows dynamic script insertion
+var script = document.createElement('script');
+script.setAttribute('src', url);
+//load the script
+document.getElementsByTagName('head')[0].appendChild(script); 
+</script>
+
+<script>
+//This is our function to be called with JSON data in 
+function showStories(data) {
+  var html=("<h1>Data from  digg.comt</h1>");
+  html+=("<p>count: " + data.count + ", timestamp: " + data.timestamp+"<p>");
+  for(i=0;i<data.stories.length;i++)
+  {
+	  html+="<h3>"+data.stories[i].title+"</h3>";
+	  html+="<div>"+data.stories[i].description+"</div>";
+  }
+  document.getElementById("digg").innerHTML=html;
+}
+var url = "http://services.digg.com/stories/top?appkey=http%3A%2F%2Fmashup.com&type=javascript&callback=showStories"; // URL of the external script
+//this shows dynamic script insertion
+var script = document.createElement('script');
+script.setAttribute('src', url);
+//load the script
+document.getElementsByTagName('head')[0].appendChild(script); 
+</script>
+
+<div id=local>Local Content</div>
+<div id=digg>Digg Content</div>
+
+</body>
+</html>

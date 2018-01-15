@@ -1,0 +1,5 @@
+$(document).ready(function() 
+{  $.getJSON('http://twitter.com/users/usejquery.json?callback=?', function(json)
+ { //get information about the user usejquery from twitter api   
+  $('#twitter_followers').text(json.followers_count); 
+  //get the follower_count from the json object and put it in a span  });});

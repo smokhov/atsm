@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cross Domain JQuery Mashup RSS feed</title>
+<style type="text/css">
+    h3 { margin-bottom: 5px; }
+    div.updated { color: #999; margin-bottom: 5px; font-size: 0.8em; }
+</style>
+<script type="text/javascript" src="jquery/jquery.js"></script>
+<script type="text/javascript" src="build/dist/jquery.jfeed.pack.js"></script>
+
+<script type="text/javascript">
+$(document).ready( function () {
+function getFeed($comp, $url) { 
+jQuery(function() {
+    jQuery.getFeed({
+        url: "GetPageContent?url="+$url,
+        success: function(feed) {
+        
+            jQuery($comp).append('<h2>'
+            + feed.title
+            + '</h2>');
+            alert(feed.title);
+            var html = '';
+            for(var i = 0; i < feed.items.length && i < 5; i++) {
+                var item = feed.items[i];
+                html += '<h3>'
+                + '<a href="'
+                + item.link
+                + '">'
+                + item.title
+                + '</a>'
+                + '</h3>';
+                
+                html += '<div">'
+                + item.updated
+                + '</div>';
+                
+                html += '<div>'
+                + item.description
+                + '</div>';
+            }
+            
+            jQuery($comp).append(html+"<hr/>");
+        }    
+    });
+})
+	}
+getFeed("#yahoo","http://feeds.bbci.co.uk/news/rss.xml" );
+
+getFeed("#cbcworld","http://rss.cbc.ca/lineup/world.xml" );
+getFeed("#google","http://news.google.com/?output=rss" );
+
+
+
+	});
+</script>
+
+</head>
+<body>
+
+<div id="cbcworld" />
+
+<div id="yahoo" />
+
+<div id="google" />
+
+</body>
+</html>
