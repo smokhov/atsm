@@ -1,0 +1,10 @@
+<!-- planes.css - a style sheet for the planes.xml document -->
+
+ad { display: block; margin-top: 15px; color: blue;}
+year, make, model { color: red; font-size: 16pt;}
+color {display: block; margin-left: 20px; font-size: 12pt;}
+description {display: block; margin-left: 20px; font-size: 12pt;}
+seller { display: block; margin-left: 15px; font-size: 14pt;}
+location {display: block; margin-left: 40px; }
+city {font-size: 12pt;}
+state {font-size: 12pt;}

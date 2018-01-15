@@ -1,0 +1,20 @@
+<?xml version = "1.0"  encoding = "utf-8"?>
+
+<!-- planes1.xml
+     A simple XML document for illustrating a schema
+     The scema is in planes.xsd 
+     -->
+
+<cars
+  xmlns = "http://cs.uccs.edu/planeSchema"
+  xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation = "car.xsd">
+    <RacingCar> Cessna 
+      <years> 1975 </years>
+      <make> Piper </make>
+      <model> Apache </model>
+      <engine> single </engine>
+    
+    </RacingCar>
+    
+</cars>

@@ -1,0 +1,27 @@
+	<?xml version = "1.0"  encoding = "utf-8" ?>
+
+	<!-- planes.dtd - a document type definition for
+                          the planes.xml document, which specifies
+                          a list of used airplanes for sale  -->
+
+	<!ELEMENT planes_for_sale (ad+)>
+	<!ELEMENT ad (year, make, model, color, description, 
+ 	              price?, seller, location)>
+	<!ELEMENT year (#PCDATA)>
+	<!ELEMENT make (#PCDATA)>
+	<!ELEMENT model (#PCDATA)>
+	<!ELEMENT color (#PCDATA)>
+	<!ELEMENT description (#PCDATA)>
+	<!ELEMENT price (#PCDATA)>
+	<!ELEMENT seller (#PCDATA)>
+	<!ELEMENT location (city, state)>
+	<!ELEMENT city (#PCDATA)>
+	<!ELEMENT state (#PCDATA)>
+
+	<!ATTLIST seller phone CDATA #REQUIRED>
+	<!ATTLIST seller email CDATA #IMPLIED>
+
+	<!ENTITY c "Cessna">
+	<!ENTITY p "Piper">
+	<!ENTITY b "Beechcraft">
+
