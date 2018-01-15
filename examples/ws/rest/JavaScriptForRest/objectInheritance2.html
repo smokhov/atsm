@@ -1,0 +1,55 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- popcorn.html 
+     This describes popcorn sales form page>
+     -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+  <head> <title> Object test</title>
+  <script type="text/javascript">
+     function plane(newMake, newModel, newYear){   
+         this.make = newMake;
+         this.model = newModel;
+         this.year = newYear;
+     }
+     
+    var myPlane = new plane("Cessna", "Centurnian", "1970");
+    
+    for(var name in myPlane){
+	    document.write(name +": "+myPlane[name] + "<br/>");
+    }
+    document.write("<br/>"); 
+    
+    
+    plane.prototype.price = 1000;
+    
+    for(var name in myPlane){
+	    document.write(name +": "+myPlane[name] + "<br/>");
+    }
+    
+    document.write("<br/>"); 
+    
+     var myPlane2 = new plane("Beechcraft", "Bonanza", "2001");
+     
+     for(var name in myPlane2){
+	    document.write(name +": "+myPlane2[name] + "<br/>");
+    }
+	
+    document.write("<br/>"); 
+    document.write("myPlane2 type is "+ typeof(myPlane2)+"<br/>");
+    document.write("myPlane2 instanceof plane: " + (myPlane2 instanceof plane) +"<br/>");
+    
+    myPlane2.mileage = function(){return (2010-myPlane2.year)*1000;};
+	    
+    </script>
+  
+  </head>
+<body>
+
+</body>
+
+
+
+  
+</html>

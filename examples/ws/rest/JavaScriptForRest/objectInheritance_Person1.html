@@ -1,0 +1,52 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- popcorn.html 
+     This describes popcorn sales form page>
+     -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+  <head> <title> Object test</title>
+  <script type="text/javascript">
+    function Person() {}
+	Person.prototype.sayHello = function(){
+  		alert ('hello');
+	};
+
+    // define the Student constructor function
+    function Student() {}
+
+    // inherit from Person
+    Student.prototype = new Person();
+
+    // correct the constructor pointer because it points to Person
+    Student.prototype.constructor = Student;
+
+    // replace the sayHello method (a polymorphism example)
+     Student.prototype.sayHello = function () {
+          alert('hi, I am a student');
+     }
+
+     var student1 = new Student();
+     student1.sayHello();
+     
+     var person1 = new Person();
+     person1.sayHello();
+     
+     document.write("student1 instance of Student: "+ (student1 instanceof Student)+"<br/>");
+     document.write("student1 instance of Person: "+ (student1 instanceof Person)+"<br/>" );
+     document.write("student1 instance of Object: "+ (student1 instanceof Object)+"<br/>");
+     
+
+	    
+    </script>
+  
+  </head>
+<body>
+
+</body>
+
+
+
+  
+</html>

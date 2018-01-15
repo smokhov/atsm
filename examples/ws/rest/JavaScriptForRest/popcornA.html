@@ -1,0 +1,72 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<!-- popcornA.html 
+     This describes popcorn sales form page which uses
+     Ajax and the zip code to fill in the city and state
+     of the customer's address
+     -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+  <head> <title> Popcorn Sales Form (Ajax) </title>
+    <style type = "text/css">
+      img {position: absolute; left: 400px;  top: 50px;}
+    </style>
+    <script type = "text/JavaScript" src = "popcornA.js">
+    </script>
+  </head>
+  <body>
+    <h2> Welcome to Millenium Gynmastics Booster Club Popcorn 
+         Sales 
+    </h2>
+
+    <form action = "">
+
+<!-- A borderless table of text widgets for name and address -->
+
+      <table>
+        <tr>
+          <td> Buyer's Name: </td>  
+          <td> <input type = "text"  name = "name" 
+                      size = "30" />
+          </td>
+        </tr>
+        <tr>
+          <td> Street Address: </td>
+          <td> <input type = "text"  name = "street"  
+                      size = "30" />
+          </td>
+        </tr>
+        <tr>
+          <td> Zip code: </td>
+          <td> <input type = "text"  name = "zip"
+                      size = "10"  
+                      onblur = "getPlace(this.value)" />
+          </td>
+        </tr>
+        <tr>
+          <td> City </td>
+          <td> <input type = "text"  name = "city"  
+                      id = "city"  size = "30" />
+          </td>
+        </tr>
+        <tr>
+          <td> State </td>
+          <td> <input type = "text"  name = "state"  
+                      id = "state"  size = "30" />
+          </td>
+        </tr>
+      </table> 
+ 
+      <img src = "popcorn.jpg"  alt = "picture of popcorn" />
+      <p />
+       
+<!-- The submit and reset buttons -->
+
+      <p>
+        <input type = "submit"  value = "Submit Order" />
+        <input type = "reset"  value = "Clear Order Form" />
+      </p>
+    </form>
+  </body>
+</html>
