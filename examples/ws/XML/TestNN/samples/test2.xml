@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<net>
+
+<!-- NNet XML created with nnetgen.pl -->
+
+	<layer type="input" index="1">
+		<neuron index="1" thresh="1.0">
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="2" thresh="1.0">
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="3" thresh="1.0">
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="4" thresh="1.0">
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="5" thresh="1.0">
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+	</layer>
+	<layer type="hidden" index="2">
+		<neuron index="1" thresh="1.0">
+			<input ref="1" weight="-0.9648950959945"/>
+			<input ref="2" weight="0.514197476389143"/>
+			<input ref="3" weight="-0.483893398118859"/>
+			<input ref="4" weight="0.36234435876203"/>
+			<input ref="5" weight="-0.948434384283097"/>
+			<output ref="1"/>
+		</neuron>
+		<neuron index="2" thresh="1.0">
+			<input ref="1" weight="0.722662376676425"/>
+			<input ref="2" weight="0.326914537040174"/>
+			<input ref="3" weight="0.53853707955038"/>
+			<input ref="4" weight="0.604625493736258"/>
+			<input ref="5" weight="0.32842133531949"/>
+			<output ref="1"/>
+		</neuron>
+		<neuron index="3" thresh="1.0">
+			<input ref="1" weight="0.373779514371186"/>
+			<input ref="2" weight="-0.987614393719056"/>
+			<input ref="3" weight="-0.672211340568559"/>
+			<input ref="4" weight="-0.353979934309308"/>
+			<input ref="5" weight="-0.155172076395509"/>
+			<output ref="1"/>
+		</neuron>
+	</layer>
+	<layer type="output" index="3">
+		<neuron index="1" thresh="1.0">
+			<input ref="1" weight="-0.914140491105869"/>
+			<input ref="2" weight="0.12633039936339"/>
+			<input ref="3" weight="-0.255889616209913"/>
+		</neuron>
+	</layer>
+</net>

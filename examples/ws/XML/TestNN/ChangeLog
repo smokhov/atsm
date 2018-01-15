@@ -1,0 +1,134 @@
+2006-02-25 02:05  mokhov
+
+	* TestNN.java: Correct a copy-paste error in the application's
+	name.
+
+2006-02-18 11:11  mokhov
+
+	* ChangeLog, Makefile: Add ChangeLogs to all the apps. Add makefile
+	rule change-log to generate with less effort. Add TOOLSDIR variable
+	as it the directory now referenced more than once. Make sure the
+	ChangeLog is added to both -bin and -src distros.
+
+2006-02-13 01:29  mokhov
+
+	* Makefile: Implement automatic .tex usage generation by all the
+	apps for future inclusion into the manual automatically. Adjust
+	Makefiles and correct some minor usage info.
+
+2006-01-27 14:52  mokhov
+
+	* TestNN.java: Adjust usage information to be more correct and add
+	missing options in it. Cosmetic review for spacing.
+
+2006-01-21 23:46  mokhov
+
+	* Makefile, README, TestNN.java: Prepare TestNN for preliminary
+	release. Clean up the application from the dead code and test only
+	NeuralNetwork by itself by simulating epoch training as
+	NeuralNetwor.train() does except avoiding looking for and using a
+	corresponding training set cluster. Add option processing with
+	OptionProcessor and a few standard and old options passed through
+	it. Add application versioning, usage(), and version checks. Dump
+	the output .xml files to the filename based on the input one.  For
+	all this to work update the NeuralNetwork class with the public API
+	of eval() (consistent with Neuron and Layer) as a synonym to the
+	private runNNet()). Additionally, make setInputs() public to be
+	accessible from outside the package.  Add test and debug targets
+	with all options for the application to test on all .xml files with
+	and without the --debug option. Update README with the new option
+	information and the list of files.
+
+2006-01-20 21:35  mokhov
+
+	* TestNN.java: Clean up code more WRT coding conventions and remove
+	redundant casts reported by Eclipse.
+
+2006-01-15 15:51  mokhov
+
+	* Makefile: Consistently space out copyright years.
+
+2006-01-14 19:10  mokhov
+
+	* Makefile: Most notably, enable assertions.
+
+2006-01-03 02:53  mokhov
+
+	* Makefile: Perform first round of copyright year updates to bump
+	to 2006.
+
+2005-12-24 17:38  mokhov
+
+	* Makefile: Update Makefiles for most apps (SpeakerIdentApp will be
+	handled separately) to produce .bz2 releases and .md5 checksums in
+	the distro directory. Fix the build to TestFFT that somehow
+	remained broken from the last Build System update. Clean away extra
+	blank line from Regression.java.
+
+2005-12-02 06:43  mokhov
+
+	* TestNN.java: Clean up TestNN's code a bit and make it more
+	compliant to our coding conventions as we are about to release it.
+
+2005-11-29 20:24  mokhov
+
+	* Makefile, README, manifest.mf: Adjust the build and packaging
+	process for the NLP and TestNN apps.  Make Makefiles build the
+	standard distros of -bin, -src, and -bundle for all. Make them
+	build the executable jars as well. Add corresponding manifests and
+	README file. Some more touch-ups and I guess a -devel release of
+	these can be made before the 0.3.0 final goes out.
+
+2005-04-23 19:31  mokhov
+
+	* TestNN.java: Remove redundant imports. Wrap the entire code into
+	one try/catch block.  Use SineLoader for artificial sample loading
+	since MARF now supports that and remove own hardcoded thing to do
+	the same.
+
+2005-04-23 16:43  mokhov
+
+	* .classpath, .project: Add Eclipse's project files to our apps.
+	They are all set dependent on the MARF project.
+
+2005-03-29 23:43  mokhov
+
+	* Makefile: Make Makefile slightly more useful in terms of setting
+	CLASSPATH and compiling and running the app.
+
+2003-01-12 10:43  mokhov
+
+	* samples/nnetgen.pl: Most notable is slightly sorted output for
+	stats, which is sorta guaranteed to hold regardlless the way the
+	stats stored in the Hashtable. The rest is cosmteic and there's
+	also an attempt to streamline NNet, but not yet :-(.  I'm not sure,
+	but most probably after that I won't do much for awhile -- new
+	term, new worries...
+
+2003-01-10 02:26  mokhov
+
+	* Makefile, TestNN.java: Build System for all the apps: Global
+	makefile in the apps module (/apps dir)  - Fixed all the sub
+	makefiles  - Made Test apps to compile again, but JUST compile, I
+	didn't test them Our main app - SpeakerIdentApp has a new option
+	--version that displays app's version as well as MARF's. There is
+	also version check in place to make sure the app is not being run
+	against old API ( < 0.2.0 )
+	
+	As of this commit MARF's and SpeakerIdentApp's versions are the
+	same, 0.2.0 but may diverge.
+
+2002-12-12 14:46  mokhov
+
+	* TestNN.java: ArtificialSample's gone
+
+2002-11-25 02:41  mokhov
+
+	* Makefile, TestNN.java, nn.xml, samples/nnetgen.pl,
+	samples/test1.xml, samples/test2.xml, samples/test3.xml: - okay NN
+	was made to work with MARF - this TestNN is a modif. of Ian's
+	Driver from resources	modifs include - some stuff not found in
+	rhe nnet   in MARF (some missing methods) were simply commented -
+	params for training are passed via ModuleParams object It seems to
+	work evem though I didn't really istimate correctness.
+

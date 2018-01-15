@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Main-Class: TestNN
+Class-Path: . marf.jar
+Name: TestNN
+Specification-Title: TestNN of Modular Audio Recognition Framework
+Specification-Version: 0.3.0
+Specification-Vendor: The MARF Research and Development Group
+Implementation-Title: TestNN
+Implementation-Version: 0.3.0-devel
+Implementation-Vendor: The MARF Research and Development Group
+Bundle-Version: 0.3.0-devel
+Bundle-Name: TestNN
+Bundle-Vendor: The MARF Research and Development Group

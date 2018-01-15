@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#
+# Wrapper Shell Script for TestNN.class/.jar
+# for UNIX environment. Accepts all the options
+# that TestNN.class/.jar accepts. Edit as
+# needed to suit your environment.
+#
+# Serguei Mokhov
+#
+# $Id: TestNN,v 1.1 2007/01/03 21:47:59 mokhov Exp $
+#
+
+JAVA=java
+CLASSPATH=.:marf.jar
+JFLAGS="-ea -verify -classpath $CLASSPATH"
+APP=TestNN
+
+# Prefer .jar first over .class if exists
+if [ -e "$APP.jar" ]; then
+	APP="$APP.jar"
+	JFLAGS="$JFLAGS -jar"
+fi
+
+$JAVA $JFLAGS $APP $*
+
+exit $?
+
+# EOF

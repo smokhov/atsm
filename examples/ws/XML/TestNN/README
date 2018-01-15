@@ -1,0 +1,49 @@
+TestNN README
+-------------
+
+$Id: README,v 1.2 2006/01/22 04:46:50 mokhov Exp $
+
+Tests the Neural Network algorithm of MARF, http://marf.sourceforge.net.
+See COPYRIGHT file for copyright information.
+
+Files:
+------
+
+COPYRIGHT   -- copyright notice (-src, -bin, and -bundle)
+TestNN.java -- the application source (shipped with -src and -bundle)
+TestNN.jar  -- executable .jar file (-bin and -bundle)
+manifest.mf -- MANIFEST file for .jar archive (-src and -bundle)
+marf.jar    -- bundled MARF library (-bundle and -bin)
+.project    -- Eclipse's project files (-bundle and -src)
+.classpath
+Makefile    -- GNU-style Makefile (-src, -bin, and -bundle)
+coding.html -- Coding Conventions Used (-bundle and -src)
+samples     -- directory with some .xml "samles" and a Perl generator script
+nn.xml      -- a preset neural network for testing
+
+
+To run (depending on the distro):
+---------------------------------
+
+java -cp .:marf.jar TestNN <options>
+java -jar TestNN.jar <options>
+make run
+make test
+make debug
+
+
+Options:
+--------
+
+Usage:
+    java TestNN --help | -h | [ OPTIONS ] <sample-xml-file>
+    java -jar TestNN.jar --help | -h | [ OPTIONS ] <sample-xml-file>
+
+Options (one or more of the following):
+    -dtd          - validate the DTD of the corresponding XML document
+    -error=VALUE  - specify minimum desired error
+    -epochs=VALUE - specify numer of epochs for training
+    -train=NUMBER - number of training interations
+    -test=NUMBER  - number of testing iterations
+
+EOF

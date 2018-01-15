@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<net>
+
+<!-- NNet XML created with nnetgen.pl -->
+
+	<layer type="input" index="1">
+		<neuron index="1" thresh="1.0">
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+			<output ref="4"/>
+			<output ref="5"/>
+			<output ref="6"/>
+			<output ref="7"/>
+			<output ref="8"/>
+			<output ref="9"/>
+			<output ref="10"/>
+			<output ref="11"/>
+			<output ref="12"/>
+		</neuron>
+		<neuron index="2" thresh="1.0">
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+			<output ref="4"/>
+			<output ref="5"/>
+			<output ref="6"/>
+			<output ref="7"/>
+			<output ref="8"/>
+			<output ref="9"/>
+			<output ref="10"/>
+			<output ref="11"/>
+			<output ref="12"/>
+		</neuron>
+		<neuron index="3" thresh="1.0">
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+			<output ref="4"/>
+			<output ref="5"/>
+			<output ref="6"/>
+			<output ref="7"/>
+			<output ref="8"/>
+			<output ref="9"/>
+			<output ref="10"/>
+			<output ref="11"/>
+			<output ref="12"/>
+		</neuron>
+		<neuron index="4" thresh="1.0">
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+			<output ref="4"/>
+			<output ref="5"/>
+			<output ref="6"/>
+			<output ref="7"/>
+			<output ref="8"/>
+			<output ref="9"/>
+			<output ref="10"/>
+			<output ref="11"/>
+			<output ref="12"/>
+		</neuron>
+		<neuron index="5" thresh="1.0">
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+			<output ref="4"/>
+			<output ref="5"/>
+			<output ref="6"/>
+			<output ref="7"/>
+			<output ref="8"/>
+			<output ref="9"/>
+			<output ref="10"/>
+			<output ref="11"/>
+			<output ref="12"/>
+		</neuron>
+	</layer>
+	<layer type="hidden" index="2">
+		<neuron index="1" thresh="1.0">
+			<input ref="1" weight="-0.44990657907146"/>
+			<input ref="2" weight="-0.913016617582855"/>
+			<input ref="3" weight="-0.976019235716855"/>
+			<input ref="4" weight="0.255729235888694"/>
+			<input ref="5" weight="-0.298752520442427"/>
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="2" thresh="1.0">
+			<input ref="1" weight="0.0826177317357804"/>
+			<input ref="2" weight="-0.441816765075892"/>
+			<input ref="3" weight="-0.308371374767219"/>
+			<input ref="4" weight="0.491369416919788"/>
+			<input ref="5" weight="-0.615226608583271"/>
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="3" thresh="1.0">
+			<input ref="1" weight="-0.608938639019847"/>
+			<input ref="2" weight="-0.234189582076439"/>
+			<input ref="3" weight="-0.419801065172599"/>
+			<input ref="4" weight="-0.581349094235037"/>
+			<input ref="5" weight="0.628563416336867"/>
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="4" thresh="1.0">
+			<input ref="1" weight="0.67536861932625"/>
+			<input ref="2" weight="0.868332593645057"/>
+			<input ref="3" weight="0.75952249788503"/>
+			<input ref="4" weight="0.97085907649025"/>
+			<input ref="5" weight="0.648997407553921"/>
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="5" thresh="1.0">
+			<input ref="1" weight="-0.145795020140405"/>
+			<input ref="2" weight="-0.417381189202302"/>
+			<input ref="3" weight="-0.499255258052195"/>
+			<input ref="4" weight="0.156874959320973"/>
+			<input ref="5" weight="0.261619319994175"/>
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="6" thresh="1.0">
+			<input ref="1" weight="0.483993556929477"/>
+			<input ref="2" weight="0.423823369390639"/>
+			<input ref="3" weight="0.964173089519207"/>
+			<input ref="4" weight="-0.416158722408362"/>
+			<input ref="5" weight="0.251681738359053"/>
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="7" thresh="1.0">
+			<input ref="1" weight="0.387067182331172"/>
+			<input ref="2" weight="-0.0955670420350003"/>
+			<input ref="3" weight="-0.544433393972888"/>
+			<input ref="4" weight="-0.232573121963298"/>
+			<input ref="5" weight="0.0187061666925032"/>
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="8" thresh="1.0">
+			<input ref="1" weight="-0.193144980870656"/>
+			<input ref="2" weight="-0.704394382492488"/>
+			<input ref="3" weight="-0.222634199662735"/>
+			<input ref="4" weight="0.865931704489348"/>
+			<input ref="5" weight="-0.617042054161701"/>
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="9" thresh="1.0">
+			<input ref="1" weight="-0.435589307224227"/>
+			<input ref="2" weight="-0.931470957235661"/>
+			<input ref="3" weight="-0.173196314393103"/>
+			<input ref="4" weight="-0.200605429080312"/>
+			<input ref="5" weight="0.511372921760291"/>
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="10" thresh="1.0">
+			<input ref="1" weight="-0.0587059056071837"/>
+			<input ref="2" weight="0.754391588552828"/>
+			<input ref="3" weight="-0.847448913427357"/>
+			<input ref="4" weight="-0.636853942304803"/>
+			<input ref="5" weight="-0.378279534281035"/>
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="11" thresh="1.0">
+			<input ref="1" weight="-0.663794039000869"/>
+			<input ref="2" weight="-0.0842730551500921"/>
+			<input ref="3" weight="-0.401614088915231"/>
+			<input ref="4" weight="0.288953223981792"/>
+			<input ref="5" weight="-0.791722915065698"/>
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+		<neuron index="12" thresh="1.0">
+			<input ref="1" weight="-0.268724760931448"/>
+			<input ref="2" weight="0.994736730295422"/>
+			<input ref="3" weight="-0.890191797273587"/>
+			<input ref="4" weight="0.0449530043128661"/>
+			<input ref="5" weight="0.529404940203065"/>
+			<output ref="1"/>
+			<output ref="2"/>
+			<output ref="3"/>
+		</neuron>
+	</layer>
+	<layer type="hidden" index="3">
+		<neuron index="1" thresh="1.0">
+			<input ref="1" weight="0.405418637531376"/>
+			<input ref="2" weight="-0.485299260600272"/>
+			<input ref="3" weight="0.973010150218094"/>
+			<input ref="4" weight="0.0149853393655661"/>
+			<input ref="5" weight="0.266387437485271"/>
+			<input ref="6" weight="0.886953635100724"/>
+			<input ref="7" weight="-0.101362855254798"/>
+			<input ref="8" weight="-0.00252246765886355"/>
+			<input ref="9" weight="0.348015716052636"/>
+			<input ref="10" weight="-0.126827808747777"/>
+			<input ref="11" weight="0.421156625066196"/>
+			<input ref="12" weight="-0.947874100177913"/>
+			<output ref="1"/>
+		</neuron>
+		<neuron index="2" thresh="1.0">
+			<input ref="1" weight="0.601097723159292"/>
+			<input ref="2" weight="0.189007783917987"/>
+			<input ref="3" weight="-0.942868271546025"/>
+			<input ref="4" weight="0.579102412473233"/>
+			<input ref="5" weight="0.61547571197341"/>
+			<input ref="6" weight="0.656699612758558"/>
+			<input ref="7" weight="0.0381538424221546"/>
+			<input ref="8" weight="0.738986348261037"/>
+			<input ref="9" weight="-0.623262188440883"/>
+			<input ref="10" weight="-0.636009866798702"/>
+			<input ref="11" weight="0.406766976578545"/>
+			<input ref="12" weight="-0.963390224407235"/>
+			<output ref="1"/>
+		</neuron>
+		<neuron index="3" thresh="1.0">
+			<input ref="1" weight="0.994512766376182"/>
+			<input ref="2" weight="0.405306372294575"/>
+			<input ref="3" weight="0.355542279294063"/>
+			<input ref="4" weight="0.830983054737587"/>
+			<input ref="5" weight="-0.136599391059512"/>
+			<input ref="6" weight="-0.686310034076882"/>
+			<input ref="7" weight="-0.521585572144694"/>
+			<input ref="8" weight="-0.121937233260198"/>
+			<input ref="9" weight="-0.560703833567366"/>
+			<input ref="10" weight="0.70529646258106"/>
+			<input ref="11" weight="0.981420490397902"/>
+			<input ref="12" weight="-0.441884981414788"/>
+			<output ref="1"/>
+		</neuron>
+	</layer>
+	<layer type="output" index="4">
+		<neuron index="1" thresh="1.0">
+			<input ref="1" weight="-0.739200136922811"/>
+			<input ref="2" weight="0.058072341731247"/>
+			<input ref="3" weight="0.988582016609165"/>
+		</neuron>
+	</layer>
+</net>

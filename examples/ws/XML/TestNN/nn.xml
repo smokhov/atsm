@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<net> 
+
+<!-- NNet of three layers, input=5, hidden1=3, output=1 -->
+<!-- Generated manually :-@ -->
+
+  <layer type="input" index="1">
+
+     <neuron index="1" thresh="0.5">
+       <output ref="1"/>
+       <output ref="2"/>
+     </neuron>
+     <neuron index="2" thresh="0.5">
+       <output ref="2"/>
+     </neuron>
+     <neuron index="3" thresh="0.5">
+       <output ref="1"/>
+       <output ref="2"/>
+       <output ref="3"/>
+     </neuron>
+     <neuron index="4" thresh="0.5">
+       <output ref="3"/>
+     </neuron>
+     <neuron index="5" thresh="0.5">
+       <output ref="1"/>
+       <output ref="3"/>
+    </neuron>
+  
+  </layer>
+
+  <layer type="hidden" index="2">
+     <neuron index="1" thresh="0.5">
+       <input ref="1" weight="0.42"/>
+       <input ref="3" weight="0.42"/>
+       <input ref="5" weight="0.42"/>
+       <output ref="1"/>
+     </neuron>
+     <neuron index="2" thresh="0.5">
+       <input ref="1" weight="0.42"/>
+       <input ref="2" weight="0.42"/>
+       <input ref="3" weight="0.42"/>
+       <output ref="1"/>
+     </neuron>
+     <neuron index="3" thresh="0.5">
+       <input ref="3" weight="0.42"/>
+       <input ref="4" weight="0.42"/>
+       <input ref="5" weight="0.42"/>
+       <output ref="1"/>  
+     </neuron>
+  </layer>
+ 
+  <layer type="output" index="3">
+  
+    <neuron index="1" thresh="1.0">
+      <input ref="1" weight="0.56"/>
+      <input ref="2" weight="0.56"/>
+      <input ref="3" weight="0.56"/>
+    </neuron>
+ 
+  </layer>
+
+</net>
+
+
