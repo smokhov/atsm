@@ -1,1 +1,3 @@
 CVS
+*.class
+*/dist/
