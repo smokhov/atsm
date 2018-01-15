@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions 
+ targetNamespace="urn:WSDLTemplates"
+ xmlns:tns="urn:WSDLTemplates"
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+   <xsd:schema 
+     targetNamespace="urn:WSDLTemplates" 
+     xmlns:tns="urn:WSDLTemplates"
+     xmlns:t="urn:SchemaTemplates"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import namespace="urn:SchemaTemplates" schemaLocation="Fault.xsd"/>
+    <xsd:element name="op1" type="tns:op1"/>
+    <xsd:complexType name="op1">
+     <xsd:sequence>
+      <xsd:element name="input" type="xsd:string"/>
+     </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="op1Response" type="tns:op1Response"/>
+    <xsd:complexType name="op1Response">
+     <xsd:sequence>
+      <xsd:element name="output" type="xsd:string"/>
+     </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="fault" type="t:Fault"/>
+   </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="op1RequestMsg">
+   <wsdl:part name="op1Parameters" element="tns:op1"/>
+  </wsdl:message>
+  <wsdl:message name="op1ResponseMsg">
+   <wsdl:part name="op1Result" element="tns:op1Response"/>
+  </wsdl:message>
+  <wsdl:message name="faultMsg"><wsdl:part name="fault" element="tns:fault"/>  </wsdl:message>
+  <wsdl:portType name="Interface">
+   <wsdl:operation name="op1">
+    <wsdl:input name="op1Request" message="tns:op1RequestMsg"/>
+    <wsdl:output name="op1Response" message="tns:op1ResponseMsg"/>
+    <wsdl:fault name="fault" message="tns:faultMsg"/>
+   </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Binding" type="tns:Interface">
+   <soap:binding 
+    style="document" 
+    transport="http://schemas.xmlsoap.org/soap/http"/>
+   <wsdl:operation name="op1">
+    <soap:operation soapAction=""/>
+    <wsdl:input name="op1Request">
+     <soap:body use="literal"/>
+    </wsdl:input>
+    <wsdl:output name="op1Response">
+     <soap:body use="literal"/>
+    </wsdl:output>
+    <wsdl:fault name="fault"><soap:fault use="literal" name="fault"/></wsdl:fault>
+   </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+   <wsdl:port name="Port" binding="tns:Binding">
+    <soap:address location="http://www.example.org/"/>
+   </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
