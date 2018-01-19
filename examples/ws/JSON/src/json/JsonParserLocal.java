@@ -13,6 +13,10 @@ import java.io.IOException;
  * @author jash, haotao
  */
 public class JsonParserLocal {
+    
+    /**
+     * This method returns various entities from the parsed local JSON file such as name, description etc.
+     */
 
     public void localJsonParser(){
 
