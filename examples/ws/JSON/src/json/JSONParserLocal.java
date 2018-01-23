@@ -12,7 +12,7 @@ import java.io.IOException;
  * @Desc This class demonstrates parsing a local JSON file using Java.
  * @author jash, haotao
  */
-public class JsonParserLocal {
+public class JSONParserLocal {
     
     /**
      * This method returns various entities from the parsed local JSON file such as name, description etc.
@@ -20,28 +20,28 @@ public class JsonParserLocal {
 
     public void localJsonParser(){
 
-        JSONParser jParser = new JSONParser();
+        JSONParser ojsonParser = new JSONParser();
         
-        String pathJson = "Complete path to the Cars.json";
+        String strPathJson = "Complete path to the Cars.json";
         //String pathJson = "/home/jash/Downloads/atsm/examples/ws/JSON/Cars.json";
 
         try {
 
-            Object obj = jParser.parse(new FileReader(pathJson));
+            Object oObject = ojsonParser.parse(new FileReader(strPathJson));
 
-            JSONObject jObj = (JSONObject) obj;
-            System.out.println(jObj);
+            JSONObject ojsonObj = (JSONObject) oObject;
+            System.out.println(ojsonObj);
             
-            JSONObject cars = (JSONObject) jObj.get("cars");
+            JSONObject oCars = (JSONObject) ojsonObj.get("cars");
             
-            JSONObject racingCar = (JSONObject) cars.get("RacingCar");
-            System.out.println(racingCar);
+            JSONObject oRacingCar = (JSONObject) oCars.get("RacingCar");
+            System.out.println(oRacingCar);
             
-            String name = racingCar.get("name").toString();
-            System.out.println(name);
+            String strName = oRacingCar.get("name").toString();
+            System.out.println(strName);
             
-            String engine = racingCar.get("engine").toString();
-            System.out.println(engine);
+            String strEngine = oRacingCar.get("engine").toString();
+            System.out.println(strEngine);
             
 
         } catch (FileNotFoundException e) {

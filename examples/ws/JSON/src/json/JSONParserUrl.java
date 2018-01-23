@@ -15,7 +15,7 @@ import org.json.simple.parser.ParseException;
  * @Desc This class demonstrates parsing a JSON from a remote source.
  * @author jash
  */
-public class JsonParserUrl {
+public class JSONParserUrl {
     
     /**
      * This method prints the name of the repositories of the specified user using the Github API.
@@ -23,24 +23,24 @@ public class JsonParserUrl {
 
     public void remoteJsonParser() {
 
-        JSONParser jParser = new JSONParser();
-        String in;
+        JSONParser ojsonParser = new JSONParser();
+        String strIn;
 
         try {
-            URL remoteURL = new URL("https://api.github.com/users/smokhov/repos");
-            URLConnection connectURL = remoteURL.openConnection();
+            URL oRemoteURL = new URL("https://api.github.com/users/smokhov/repos");
+            URLConnection oConnectURL = oRemoteURL.openConnection();
 
-            BufferedReader readUrl = new BufferedReader(new InputStreamReader(connectURL.getInputStream()));
+            BufferedReader oReadUrl = new BufferedReader(new InputStreamReader(oConnectURL.getInputStream()));
 
-            while ((in = readUrl.readLine()) != null) {
+            while ((strIn = oReadUrl.readLine()) != null) {
                 //System.out.println(in);
-                JSONArray arrJson = (JSONArray) jParser.parse(in);
+                JSONArray oArrJson = (JSONArray) ojsonParser.parse(strIn);
 
-                for (Object obj : arrJson) {
-                    JSONObject jObj = (JSONObject) obj;
-                    String name = jObj.get("name").toString();
+                for (Object oObject : oArrJson) {
+                    JSONObject ojsonObj = (JSONObject) oObject;
+                    String strName = ojsonObj.get("name").toString();
 
-                    System.out.println(name);
+                    System.out.println(strName);
                 }
             }
 
