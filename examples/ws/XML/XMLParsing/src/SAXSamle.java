@@ -11,7 +11,6 @@ import org.xml.sax.helpers.DefaultHandler;
 public class SAXSamle {
 	
 	    public static void main(String[] args) {
-	        // TODO code application logic here
 	        
 	        try {
 	            SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -20,24 +19,27 @@ public class SAXSamle {
 	            DefaultHandler handler = new DefaultHandler() {
 
 	                StringBuilder value;
-
+	                
+	                @Override
 	                public void startElement(String uri, String localName,
 	                        String qName,Attributes attribtues)
 	                        throws SAXException {
 	                    value = new StringBuilder();
 	                }
 
+	                @Override
 	                public void endElement(String uri, String localName,
 	                        String qName) throws SAXException {
 	                    if ("fileContent".equalsIgnoreCase(qName)) {
 	                        String decodedValue = new String(DatatypeConverter.parseBase64Binary(value.toString()));
 	                        System.out.println(qName + " = " + decodedValue);
 	                    } else {
-	                        System.out.println(qName + " = " + value);
+	                        System.out.println(qName + " = " + value.toString());
 	                    }
 	                    value = new StringBuilder();
 	                }
 
+	                @Override
 	                public void characters(char ch[], int start, int length)
 	                        throws SAXException {
 	                    value.append(new String(ch, start, length));

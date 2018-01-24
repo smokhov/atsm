@@ -6,4 +6,11 @@
       <model> Apache </model>
       <engine> single </engine>
     </RacingCar>
+    
+    <RacingCar> Cessna2 
+      <years> 1977 </years>
+      <make> Piper2 </make>
+      <model> Apache2 </model>
+      <engine> single2 </engine>
+    </RacingCar>
 </cars>
