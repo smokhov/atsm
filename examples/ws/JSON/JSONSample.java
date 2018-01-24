@@ -1,9 +1,10 @@
-package JSON;
+package json;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import javax.lang.model.element.NestingKind;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,16 +17,25 @@ public class JSONSample {
 
         JSONParser jParser = new JSONParser(); // Creates a parser.
 
-        try {
+        try
+        {
 
-            Object obj = jParser.parse(new FileReader("Complete path to the Cars.json"));
-            System.out.println();
+            JSONParser ojsonParser = new JSONParser();
+            String strPathJson = "/Users/ERIC_LAI/IdeaProjects/soen487/src/json/Cars.json";
+            Object oObject = ojsonParser.parse(new FileReader(strPathJson));
+            JSONObject ojsonObj = (JSONObject) oObject;
+            System.out.println(ojsonObj);
 
-            JSONObject jObj = (JSONObject) obj;
-            System.out.println(jObj);
+            JSONObject oCars = (JSONObject) ojsonObj.get("cars");
 
-            String name = (String) jObj.get("RacingCar");
-            System.out.println(name);
+            JSONObject oRacingCar = (JSONObject) oCars.get("RacingCar");
+            System.out.println(oRacingCar);
+
+            String strName = oRacingCar.get("name").toString();
+            System.out.println(strName);
+
+            String strEngine = oRacingCar.get("engine").toString();
+            System.out.println(strEngine);
 
 
         } catch (FileNotFoundException e) {
