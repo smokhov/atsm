@@ -9,9 +9,9 @@ Follow these steps.
 `cd ~/JavaScriptForRest`\
 `php -S localhost:8000`
 
-In your default browser goto `http://localhost/8000/popcornA.html`\
-or `http://localhost/8000/popcornA.html`\
-or `http://localhost/8000/objectInheritance_Person1.html`
+In your default browser goto `http://localhost:8000/popcornA.html`\
+or `http://localhost:8000/popcornA.html`\
+or `http://localhost:8000/objectInheritance_Person1.html`
 
 ### MashupTest
 
