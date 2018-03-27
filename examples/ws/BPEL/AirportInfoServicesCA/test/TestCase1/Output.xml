@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Body>
+    <m:airportInfoRequestorOperationResponse xmlns:m="http://j2ee.netbeans.org/wsdl/AirportInfoServices/src/airportInfoRequestor">
+      <getAirportInformationByCityOrAirportNameResponse xmlns:msgns="http://www.webserviceX.NET">&lt;NewDataSet&gt;
+  &lt;Table&gt;
+    &lt;AirportCode&gt;YUL&lt;/AirportCode&gt;
+    &lt;CityOrAirportName&gt;MONTREAL DORVAL&lt;/CityOrAirportName&gt;
+    &lt;Country&gt;Canada&lt;/Country&gt;
+    &lt;CountryAbbrviation&gt;CA&lt;/CountryAbbrviation&gt;
+    &lt;CountryCode&gt;941&lt;/CountryCode&gt;
+    &lt;GMTOffset&gt;5&lt;/GMTOffset&gt;
+    &lt;RunwayLengthFeet&gt;11000&lt;/RunwayLengthFeet&gt;
+    &lt;RunwayElevationFeet&gt;117&lt;/RunwayElevationFeet&gt;
+    &lt;LatitudeDegree&gt;45&lt;/LatitudeDegree&gt;
+    &lt;LatitudeMinute&gt;28&lt;/LatitudeMinute&gt;
+    &lt;LatitudeSecond&gt;0&lt;/LatitudeSecond&gt;
+    &lt;LatitudeNpeerS&gt;N&lt;/LatitudeNpeerS&gt;
+    &lt;LongitudeDegree&gt;73&lt;/LongitudeDegree&gt;
+    &lt;LongitudeMinute&gt;45&lt;/LongitudeMinute&gt;
+    &lt;LongitudeSeconds&gt;10&lt;/LongitudeSeconds&gt;
+    &lt;LongitudeEperW&gt;W&lt;/LongitudeEperW&gt;
+  &lt;/Table&gt;
+  &lt;Table&gt;
+    &lt;AirportCode&gt;YUL&lt;/AirportCode&gt;
+    &lt;CityOrAirportName&gt;MONTREAL DORVAL&lt;/CityOrAirportName&gt;
+    &lt;Country&gt;Canada&lt;/Country&gt;
+    &lt;CountryAbbrviation&gt;CA&lt;/CountryAbbrviation&gt;
+    &lt;CountryCode&gt;941&lt;/CountryCode&gt;
+    &lt;GMTOffset&gt;5&lt;/GMTOffset&gt;
+    &lt;RunwayLengthFeet&gt;11000&lt;/RunwayLengthFeet&gt;
+    &lt;RunwayElevationFeet&gt;117&lt;/RunwayElevationFeet&gt;
+    &lt;LatitudeDegree&gt;45&lt;/LatitudeDegree&gt;
+    &lt;LatitudeMinute&gt;28&lt;/LatitudeMinute&gt;
+    &lt;LatitudeSecond&gt;0&lt;/LatitudeSecond&gt;
+    &lt;LatitudeNpeerS&gt;N&lt;/LatitudeNpeerS&gt;
+    &lt;LongitudeDegree&gt;73&lt;/LongitudeDegree&gt;
+    &lt;LongitudeMinute&gt;45&lt;/LongitudeMinute&gt;
+    &lt;LongitudeSeconds&gt;10&lt;/LongitudeSeconds&gt;
+    &lt;LongitudeEperW&gt;W&lt;/LongitudeEperW&gt;
+  &lt;/Table&gt;
+&lt;/NewDataSet&gt;</getAirportInformationByCityOrAirportNameResponse>
+    </m:airportInfoRequestorOperationResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
