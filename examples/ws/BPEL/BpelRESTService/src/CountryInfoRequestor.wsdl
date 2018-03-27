@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="CountryInfoRequestor" targetNamespace="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoRequestor"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoRequestor">
+    <types/>
+    <message name="CountryInfoRequestorOperationRequest">
+        <part name="countryName" type="xsd:string"/>
+    </message>
+    <message name="CountryInfoRequestorOperationResponse">
+        <part name="countrtyInfo" type="xsd:string"/>
+    </message>
+    <portType name="CountryInfoRequestorPortType">
+        <operation name="CountryInfoRequestorOperation">
+            <input name="input1" message="tns:CountryInfoRequestorOperationRequest"/>
+            <output name="output1" message="tns:CountryInfoRequestorOperationResponse"/>
+        </operation>
+    </portType>
+</definitions>

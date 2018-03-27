@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Body>
+    <m:CountryInfoRequestorOperationResponse xmlns:m="BpelRESTServiceCA" xmlns:msgns="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoRequestor">
+      <countrtyInfo xmlns:msgns="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoServiceProvider" xmlns:ns0="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoRequestor">
+        <RestResponse>
+          <result>
+            <name>British Indian Ocean Territory</name>
+            <alpha3_code>IOT</alpha3_code>
+            <alpha2_code>IO</alpha2_code>
+          </result>
+          <result>
+            <name>India</name>
+            <alpha3_code>IND</alpha3_code>
+            <alpha2_code>IN</alpha2_code>
+          </result>
+          <messages>Total [2] records found.</messages>
+        </RestResponse>
+      </countrtyInfo>
+    </m:CountryInfoRequestorOperationResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
