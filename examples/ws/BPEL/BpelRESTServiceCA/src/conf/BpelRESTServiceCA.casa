@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoServiceProvider" xmlns:ns2="BpelRESTServiceCA" xmlns:ns3="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoRequestor" xmlns:ns4="http://enterprise.netbeans.org/bpel/BpelRESTService/bpelRESTService" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="RestOutboundWSDL_OutboundPort" interface-name="ns1:RestOutboundPortType" name="endpoint1" service-name="ns1:RestOutboundService"/>
+        <endpoint endpoint-name="ServiceRequestor" interface-name="ns3:CountryInfoRequestorPortType" name="endpoint2" service-name="ns2:BpelRESTServiceCAService1"/>
+        <endpoint display-name="ServiceRequestor" endpoint-name="CountryInfoRequestorRole_myRole" file-path="bpelRESTService.bpel" interface-name="ns3:CountryInfoRequestorPortType" name="endpoint3" process-name="bpelRESTService" service-name="ns4:ServiceRequestor"/>
+        <endpoint display-name="CountryInfoServiceProvider" name="endpoint4" file-path="bpelRESTService.bpel" endpoint-name="RestOutboundPortTypeRole_partnerRole" interface-name="ns1:RestOutboundPortType" process-name="bpelRESTService" service-name="ns4:CountryInfoServiceProvider"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="BpelRESTService.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="BpelRESTServiceCA-BpelRESTService" unit-name="BpelRESTService" unknown="false" x="130" y="97">
+            <provides endpoint="endpoint3"/>
+            <consumes endpoint="endpoint4"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="BpelRESTServiceCA-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port bindingType="soap" x="160" y="228">
+                    <link xlink:href="../jbiasa/BpelRESTServiceCA.wsdl#xpointer(/definitions/service[@name=&apos;BpelRESTServiceCAService1&apos;]/port[@name=&apos;ServiceRequestor&apos;])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-rest-binding.jar" component-name="sun-rest-binding" description="Represents this Service Unit" name="BpelRESTServiceCA-sun-rest-binding" unit-name="sun-rest-binding">
+            <ports>
+                <port x="160" y="37">
+                    <link xlink:href="../jbiServiceUnits/BpelRESTService/CountryInfoServiceProvider.wsdl#xpointer(/definitions/service[@name='RestOutboundService']/port[@name='RestOutboundWSDL_OutboundPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint2" provider="endpoint3" state="new"/>
+        <connection state="unchanged" consumer="endpoint4" provider="endpoint1"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/BpelRESTServiceCA.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelRESTService/CountryInfoRequestor.wsdl#xpointer(/definitions/portType[@name='CountryInfoRequestorPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelRESTService/CountryInfoServiceProvider.wsdl#xpointer(/definitions/portType[@name='RestOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelRESTServiceCA.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/BpelRESTServiceCA.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelRESTService/CountryInfoServiceProvider.wsdl#xpointer(/definitions/binding[@name='RestOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelRESTServiceCA.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/BpelRESTServiceCA.wsdl#xpointer(/definitions/service[@name='BpelRESTServiceCAService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelRESTService/CountryInfoServiceProvider.wsdl#xpointer(/definitions/service[@name='RestOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BpelRESTServiceCA.wsdl#xpointer(/definitions/service[@name='BpelRESTServiceCAService1'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="243"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>
