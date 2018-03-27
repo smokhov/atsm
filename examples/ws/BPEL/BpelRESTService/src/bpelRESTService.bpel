@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="bpelRESTService"
+    targetNamespace="http://enterprise.netbeans.org/bpel/BpelRESTService/bpelRESTService"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/BpelRESTService/bpelRESTService"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:sxnmp="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/NMProperty">
+    <import namespace="http://enterprise.netbeans.org/bpel/CountryInfoRequestorWrapper" location="CountryInfoRequestorWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoRequestor" location="CountryInfoRequestor.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoServiceProvider" location="CountryInfoServiceProvider.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="CountryInfoServiceProvider" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoServiceProvider" partnerLinkType="tns:RestOutboundWSDL" partnerRole="RestOutboundPortTypeRole"/>
+        <partnerLink name="ServiceRequestor" xmlns:tns="http://enterprise.netbeans.org/bpel/CountryInfoRequestorWrapper" partnerLinkType="tns:CountryInfoRequestorLinkType" myRole="CountryInfoRequestorRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="GetCountryInfoOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoServiceProvider" messageType="tns:GetCountryInfoResponse"/>
+        <variable name="GetCountryInfoIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoServiceProvider" messageType="tns:GetCountryInfoRequest"/>
+        <variable name="CountryInfoRequestorOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoRequestor" messageType="tns:CountryInfoRequestorOperationResponse"/>
+        <variable name="CountryInfoRequestorOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoRequestor" messageType="tns:CountryInfoRequestorOperationRequest"/>
+    </variables>
+    <sequence>
+        <receive name="Receive1" createInstance="yes" partnerLink="ServiceRequestor" operation="CountryInfoRequestorOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoRequestor" portType="tns:CountryInfoRequestorPortType" variable="CountryInfoRequestorOperationIn"/>
+        <assign name="Assign1">
+            <copy>
+                <from>concat('http://services.groupkt.com/country/search?text=', $CountryInfoRequestorOperationIn.countryName)</from>
+                <to variable="GetCountryInfoIn" sxnmp:nmProperty="org.glassfish.openesb.rest.url"/>
+            </copy>
+            <copy>
+                <from>''</from>
+                <to variable="GetCountryInfoIn" part="part1"/>
+            </copy>
+        </assign>
+        <invoke name="Invoke1" partnerLink="CountryInfoServiceProvider" operation="GetCountryInfo" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoServiceProvider" portType="tns:RestOutboundPortType" inputVariable="GetCountryInfoIn" outputVariable="GetCountryInfoOut"/>
+        <assign name="Assign2">
+            <copy>
+                <from variable="GetCountryInfoOut" part="part1"/>
+                <to variable="CountryInfoRequestorOperationOut" part="countrtyInfo"/>
+            </copy>
+        </assign>
+        <reply name="Reply1" partnerLink="ServiceRequestor" operation="CountryInfoRequestorOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/BpelRESTService/src/CountryInfoRequestor" portType="tns:CountryInfoRequestorPortType" variable="CountryInfoRequestorOperationOut"/>
+    </sequence>
+</process>
