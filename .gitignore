@@ -1,3 +1,4 @@
 CVS
 *.class
 */dist/
+private/
