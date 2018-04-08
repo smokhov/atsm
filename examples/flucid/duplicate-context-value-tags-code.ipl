@@ -1,0 +1,14 @@
+// Give me observed property at index 2 in the observation sequence obs
+o @ obs.# 2
+where
+  // Higher-level dimension in the form of (P,min,opt)
+  observation o;
+  // Equivalent to writing = { A, A, A, B, B };
+  // Equivalent to writing = A fby A fby A fby B fby B fby eod;
+  observation sequence obs = ((A,3,0), (B,2,0));
+  // Properties A and B are arrays of computations
+  // or any Forensic Lucid Expressions
+  A = [c1,c2,c3,c4];
+  B = 1;
+  next obs;
+end

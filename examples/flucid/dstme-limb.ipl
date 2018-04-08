@@ -1,0 +1,12 @@
+[bel(es), pl(es)]
+where
+  evidential statement es = { betty, sally };
+
+  observation sequence betty = { oBetty };
+  observation sequence sally = { oSally };
+
+  observation oBetty = ("limb on my car", 1, 0, 0.99);
+  observation oSally = ("limb on my car", 1, 0, 0.99);
+
+  1;
+end

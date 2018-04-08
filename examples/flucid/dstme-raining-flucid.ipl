@@ -1,0 +1,49 @@
+raining @ [city:"Montreal", month:"Sep", day:4]
+where
+	dimension city: {"Montreal", "Ottawa", "Quebec"};
+	dimension day: {1 to 31};
+	
+	evidential statement es_raining = {os_montreal_raining, os_ottawa_raining, os_quebec_raining};
+	
+	observation sequence os_montreal_raining =
+	{
+		([city:"Montreal", month:"Sep", day:1], 1, 0, 1.0),
+		([city:"Montreal", month:"Sep", day:2], 1, 0, 0.0),
+		([city:"Montreal", month:"Sep", day:3], 1, 0, 1.0),
+		([city:"Montreal", month:"Sep", day:4], 1, 0, 0.0),
+		([city:"Montreal", month:"Sep", day:5], 1, 0, 1.0),
+		([city:"Montreal", month:"Sep", day:6], 1, 0, 0.0),
+		([city:"Montreal", month:"Sep", day:7], 1, 0, 1.0),
+		([city:"Montreal", month:"Sep", day:8], 1, 0, 0.0),
+		([city:"Montreal", month:"Sep", day:9], 1, 0, 1.0)
+	};
+
+	observation sequence os_quebec_raining =
+	{
+		([city:"Quebec", month:"Sep", day:1], 1, 0, 0.0),
+		([city:"Quebec", month:"Sep", day:2], 1, 0, 0.0),
+		([city:"Quebec", month:"Sep", day:3], 1, 0, 1.0),
+		([city:"Quebec", month:"Sep", day:4], 1, 0, 1.0),
+		([city:"Quebec", month:"Sep", day:5], 1, 0, 1.0),
+		([city:"Quebec", month:"Sep", day:6], 1, 0, 0.0),
+		([city:"Quebec", month:"Sep", day:7], 1, 0, 0.0),
+		([city:"Quebec", month:"Sep", day:8], 1, 0, 0.0),
+		([city:"Quebec", month:"Sep", day:9], 1, 0, 1.0)
+	};
+	
+	observation sequence os_ottawa_raining =
+	{
+		([city:"Ottawa", month:"Sep", day:1], 1, 0, 0.0),
+		([city:"Ottawa", month:"Sep", day:2], 1, 0, 1.0),
+		([city:"Ottawa", month:"Sep", day:3], 1, 0, 1.0),
+		([city:"Ottawa", month:"Sep", day:4], 1, 0, 1.0),
+		([city:"Ottawa", month:"Sep", day:5], 1, 0, 1.0),
+		([city:"Ottawa", month:"Sep", day:6], 1, 0, 1.0),
+		([city:"Ottawa", month:"Sep", day:7], 1, 0, 0.0),
+		([city:"Ottawa", month:"Sep", day:8], 1, 0, 0.0),
+		([city:"Ottawa", month:"Sep", day:9], 1, 0, 0.0)
+	};
+
+	// The result is an observation "([city:"Montreal", month:"Sep", day:3], 1, 0, 1.0)"
+	raining = ([city:#city,month:#month,day:#day] \intersection es_raining); 
+end

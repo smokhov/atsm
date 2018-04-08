@@ -1,0 +1,49 @@
+raining @ [city:"Montreal", month:"Sep", day:4]
+where
+	dimension city: unordered finite nonperiodic {"Montreal", "Ottawa", "Quebec"};
+	dimension day: ordered finite nonperiodic {1 to 31};
+	
+	evidential statement es_raining = {os_montreal_raining, os_ottawa_raining, os_quebec_raining};
+	
+	observation sequence os_montreal_raining =
+	{
+		([city:"Montreal", month:"Sep", day:1, raining:true], 1, 0, 1.0, "September 1, 2013"),
+		[city:"Montreal", month:"Sep", day:2, raining:false],
+		[city:"Montreal", month:"Sep", day:3, raining:true],
+		[city:"Montreal", month:"Sep", day:4, raining:false],
+		[city:"Montreal", month:"Sep", day:5, raining:true],
+		[city:"Montreal", month:"Sep", day:6, raining:false],
+		[city:"Montreal", month:"Sep", day:7, raining:true],
+		[city:"Montreal", month:"Sep", day:8, raining:false],
+		[city:"Montreal", month:"Sep", day:9, raining:true]
+	};
+
+	observation sequence os_quebec_raining =
+	{
+		([city:"Quebec", month:"Sep", day:1, raining:false], 1, 0, 1.0, "September 1, 2013"),
+		[city:"Quebec", month:"Sep", day:2, raining:false],
+		[city:"Quebec", month:"Sep", day:3, raining:true],
+		[city:"Quebec", month:"Sep", day:4, raining:true],
+		[city:"Quebec", month:"Sep", day:5, raining:true],
+		[city:"Quebec", month:"Sep", day:6, raining:false],
+		[city:"Quebec", month:"Sep", day:7, raining:false],
+		[city:"Quebec", month:"Sep", day:8, raining:false],
+		[city:"Quebec", month:"Sep", day:9, raining:true]
+	};
+	
+	observation sequence os_ottawa_raining =
+	{
+		([city:"Ottawa", month:"Sep", day:1, raining:false], 1, 0, 1.0, "September 1, 2013"),
+		[city:"Ottawa", month:"Sep", day:2, raining:true],
+		[city:"Ottawa", month:"Sep", day:3, raining:true],
+		[city:"Ottawa", month:"Sep", day:4, raining:true],
+		[city:"Ottawa", month:"Sep", day:5, raining:true],
+		[city:"Ottawa", month:"Sep", day:6, raining:true],
+		[city:"Ottawa", month:"Sep", day:7, raining:false],
+		[city:"Ottawa", month:"Sep", day:8, raining:false],
+		[city:"Ottawa", month:"Sep", day:9, raining:false]
+	};
+
+	// The result is an observation "([city:"Montreal", month:"Sep", day:4, raining:true], 1, 0, 1.0)"
+	raining = ([city:#city,month:#month,day:#day] \intersection es_raining); 
+end

@@ -1,0 +1,9 @@
+o
+where
+	observation o = (P, min, max, w, t);
+	P = "B_add";
+	min = 1;
+	max = 0;
+	w = 1.0;
+	t = "Jun  3 2013";
+end
