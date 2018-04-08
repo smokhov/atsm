@@ -1,0 +1,9 @@
+os
+where
+  observation o = ("A printed" => "very well", 1, 0, 0.85, 123);
+  observation o1 = ("B printed" => "not very well", 1, 0, 0.15, 231);
+  observation sequence os1 = {o, o1};
+  observation sequence os2 = o fby o1;
+  evidential statement es1 = os2;
+  os = os2;
+end

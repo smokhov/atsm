@@ -1,0 +1,17 @@
+MARFos
+where
+MARFos = { confo, tseto, resulto } =
+{
+  ([
+    sample_loader      : WAV [ channels: 2, bitrate: 16, encoding: PCM, f : 8000 ],
+    preprocessing      : LOW-PASS-FFT-FILTER [ cutoff: 2024, windowsize: 2048 ],
+    feature_extraction : LPC [ poles: 40, windowsize: 2048 ],
+    classification     : MINKOWSKI-DISTANCE [ r : 6 ]
+  ], 1, 0),
+  
+  ([data:{[5.2,3.5,7.5],[3.6,2.5,5.5,6.5]}, files:["/foo/bar.wav","/bar/foo.wav"]], 1, 0),
+  
+  ([ID:5, outcome:1.5], 1, 0)
+};
+
+end
