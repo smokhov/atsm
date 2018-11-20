@@ -59,6 +59,10 @@ main.o: main.c common.h
 $(DRIVER): types.h ascii.h ascii.c
 	$(CC) $(CC_OPTIONS) $(INC) -c ascii.c
 
+# https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Kernel_Administration_Guide/sect-signing-kernel-modules-for-secure-boot.html
+el-sign-tools:
+	yum -y install openssl kernel-devel perl mokutil keyutils
+
 clean-all:
 	make clean
 	rmmod ascii
