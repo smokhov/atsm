@@ -1,0 +1,55 @@
+Notes: Download: https://sourceforge.net/projects/doomlegacy/files/1.47.2/
+Download doomlegacy_1.47.2_linux2.6_64_sdl.tar.bz2
+Download the common.zip and source.tar.bz2
+Find a doom IWAD file, this one is hard due to there many variations and getting the original is impossible. Download SDL and SDL_Mixer if not existant.
+Run doomlegacy.
+
+Issues:
+No idea on controls.
+Fatal crash if attempting to play the game. Crashes the linux computer.
+
+DEWM LEGACY
+HCI files
+
+doomlegacy_1.47.2_source/tools/keys.h
+The rest is in the doomlegacy_1.47.2_source/src
+Files include:
+	G_input.h && G_input.c*
+// remaps the input event to a game control.
+void  G_MapEventsToControls (event_t *ev);
+
+// returns the name of a key
+char* G_KeynumToString (int keynum);
+int   G_KeyStringtoNum(char *keystr);
+
+// detach any keys associated to the given game control
+void  G_Clear_ControlKeys (int (*setupcontrols)[2], int control);
+void  Command_Setcontrol_f(void);
+void  Command_Setcontrol2_f(void);
+void  G_Controldefault(void);
+void  G_SaveKeySetting(FILE *f);
+void  G_CheckDoubleUsage(int keynum);
+
+// Called for cv_usemouse, cv_grabinput, cv_mouse_motion
+void  CV_mouse_OnChange( void );
+
+
+
+	D_netcmd.h*
+void D_Register_ClientCommands (void);
+void D_Send_PlayerConfig(void);
+
+	I_joy.h*
+extern int num_joybindings;
+extern joybinding_t joybindings[MAX_JOYBINDINGS];
+int I_JoystickNumAxes(int joynum);
+int I_JoystickGetAxis(int joynum, int axisnum);
+
+	keys.h*
+
+	i_system.h*
+void I_StartupMouse( boolean play_mode );
+void I_StartupMouse2(void);
+void I_UngrabMouse(void);
+
+
