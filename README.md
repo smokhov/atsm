@@ -19,6 +19,7 @@ shell scripting, and web services.
 ### WS ###
 
 * Web sockets
+* From Kosta: https://github.com/SOEN487
 
 ## References ##
 
